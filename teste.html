@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="http://dev.music.free.fr/css/music.min.css" />
-  <script src="http://dev.music.free.fr/js/abc-ui-1.0.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/abcjs/7.1.0/abcjs_basic_7.1.0-min.js"></script>
 </head>
+
 <body>
 <div class="abc-source">
     X:1
@@ -12,8 +12,13 @@
     CDEFGABc |]
   </div>
 </body>
- <script>
-  $ABC_UI.init();
+<script>
+  window.onload = function() {
+    var partituraABC = "X:1\nT:Exemplo de Partitura\nK:C\nL:1/4\nCDEFGABc|";
+    var partituraDiv = document.getElementById("partitura");
+    ABCJS.renderAbc(partituraDiv, partituraABC);
+};
 </script>
+
 
 </html>
